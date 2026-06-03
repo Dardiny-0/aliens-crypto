@@ -108,9 +108,9 @@ function Hero() {
 
       <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
         <div className="text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-3 py-1 text-xs font-display tracking-widest text-primary mb-6">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
-            FILE #2026-ALIENS-GOV
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-3 py-1.5 text-xs font-display tracking-widest text-primary mb-6 shadow-[0_0_20px_oklch(0.85_0.22_155/0.25)]">
+            <Fuel className="h-3.5 w-3.5 animate-pulse-glow" />
+            FUELING THE ALIEN · LIVE
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-glow text-primary">
             THEY WALK<br />AMONG US
