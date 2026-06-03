@@ -12,9 +12,6 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const siteDescription =
-  "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov/Aliens. They Walk Among Us 👽 ALIENS is the cutest, friendliest grey alien coin.";
-
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -81,15 +78,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "ALIENS" },
-      { name: "description", content: siteDescription },
+      { name: "description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov-Aliens. They Walk Among Us 👽
+
+ALIENS is the cutest, friendliest grey alien coin" },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "ALIENS" },
-      { property: "og:description", content: siteDescription },
+      { property: "og:description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov-Aliens. They Walk Among Us 👽
+
+ALIENS is the cutest, friendliest grey alien coin" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "ALIENS" },
-      { name: "twitter:description", content: siteDescription },
+      { name: "twitter:description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov-Aliens. They Walk Among Us 👽
+
+ALIENS is the cutest, friendliest grey alien coin" },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ac2808d-b5a5-4e26-8fdf-b3166dc4f009/id-preview-4a61c8d9--eb807da3-64be-45be-b4ca-42abc05fa70f.lovable.app-1780449117484.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/6ac2808d-b5a5-4e26-8fdf-b3166dc4f009/id-preview-4a61c8d9--eb807da3-64be-45be-b4ca-42abc05fa70f.lovable.app-1780449117484.png" },
     ],
