@@ -1,29 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { AlienSite } from "@/components/AlienSite";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "$ALIENS | They Walk Among Us – Official Solana Meme Coin" },
+      {
+        name: "description",
+        content:
+          "$ALIENS — the official 2026 declassified Solana meme coin. Abduct the market with the cutest alien in crypto. They Walk Among Us.",
+      },
+      { property: "og:title", content: "$ALIENS | They Walk Among Us" },
+      {
+        property: "og:description",
+        content:
+          "The official 2026 declassified Solana meme coin. Probe the dips, beam up the gains.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
-  component: Index,
+  component: AlienSite,
 });
-
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
