@@ -400,19 +400,23 @@ function Community() {
           Truthers, degens, and believers unite. The mothership is boarding now.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            to={SOON}
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 font-display font-bold tracking-wider text-primary-foreground btn-glow"
           >
             <Send className="h-4 w-4" />
             JOIN TELEGRAM
-          </Link>
-          <Link
-            to={SOON}
+          </a>
+          <a
+            href={X_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
           >
             FOLLOW ON X
-          </Link>
+          </a>
         </div>
       </div>
     </Section>
