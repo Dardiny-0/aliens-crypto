@@ -144,15 +144,41 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end pb-16">
           <div className="absolute inset-0 m-auto h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
+
+          {/* Token stream — fueling the alien */}
+          <div className="pointer-events-none absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-2 z-10">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_oklch(0.85_0.22_155/0.9)] animate-fuel-stream"
+                style={{ animationDelay: `${i * 0.4}s` }}
+              />
+            ))}
+          </div>
+
           <img
             src={alienMascot}
-            alt="Cute grey alien holding a Solana orb"
+            alt="Cute grey alien being fueled with $ALIENS tokens"
             className="relative w-64 sm:w-80 lg:w-[26rem] drop-shadow-[0_0_40px_rgba(0,255,157,0.45)] animate-float"
             width={520}
             height={520}
           />
+
+          {/* Fuel gauge */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 sm:w-72 card-cyber rounded-lg px-4 py-3">
+            <div className="flex items-center justify-between text-[10px] font-display tracking-widest mb-1.5">
+              <span className="flex items-center gap-1.5 text-primary"><Zap className="h-3 w-3" /> FUEL LEVEL</span>
+              <span className="text-primary text-glow-soft">98%</span>
+            </div>
+            <div className="h-2 rounded-full bg-secondary overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary"
+                style={{ width: "98%", boxShadow: "0 0 14px oklch(0.85 0.22 155 / 0.7)" }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
