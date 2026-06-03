@@ -72,12 +72,12 @@ function NavBar() {
           ))}
         </ul>
         <div className="flex items-center gap-3">
-          <Link to={SOON} aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href={X_URL} target="_blank" rel="noopener noreferrer" aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.83l-4.74-6.2L4.8 22H2l7.04-8.04L2 2h6.91l4.29 5.7L18.244 2Zm-1.2 18.2h1.86L7.04 3.7H5.06L17.045 20.2Z"/></svg>
-          </Link>
-          <Link to={SOON} aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
+          </a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.6 10.8c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11-7c.5-.3 1-.1.6.2l-9 8.1.3.5 4.7 3.5c.8.5 1.4.2 1.6-.7l2.9-13.5c.3-1.3-.4-1.9-1.8-1.4Z"/></svg>
-          </Link>
+          </a>
           <a
             href="#buy"
             className="hidden sm:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-bold font-display tracking-wider text-primary-foreground btn-glow"
