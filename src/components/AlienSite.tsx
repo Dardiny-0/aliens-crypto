@@ -435,8 +435,8 @@ function Footer() {
           © 2026 $ALIENS · Not financial advice · Pump responsibly · They walk among us
         </p>
         <div className="flex gap-4 text-muted-foreground text-xs font-display tracking-widest">
-          <Link to={SOON} className="hover:text-primary transition" aria-label="X">X</Link>
-          <Link to={SOON} className="hover:text-primary transition" aria-label="Telegram">TG</Link>
+          <a href={X_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition" aria-label="X">X</a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition" aria-label="Telegram">TG</a>
           <Link to={SOON} className="hover:text-primary transition" aria-label="Dexscreener">DEX</Link>
         </div>
       </div>
