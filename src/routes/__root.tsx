@@ -77,19 +77,19 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "$ALIENS" },
+      { title: "ALIENS" },
       { name: "description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov/Aliens. They Walk Among Us 👽
 
 $ALIENS is the cutest, friendliest grey alien coin" },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "$ALIENS" },
+      { property: "og:title", content: "ALIENS" },
       { property: "og:description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov/Aliens. They Walk Among Us 👽
 
 $ALIENS is the cutest, friendliest grey alien coin" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "$ALIENS" },
+      { name: "twitter:title", content: "ALIENS" },
       { name: "twitter:description", content: "The official 2026 declassified Solana meme coin inspired by WhiteHouse.gov/Aliens. They Walk Among Us 👽
 
 $ALIENS is the cutest, friendliest grey alien coin" },
