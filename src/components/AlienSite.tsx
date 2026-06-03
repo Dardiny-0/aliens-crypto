@@ -22,7 +22,7 @@ import alienMascot from "@/assets/alien-mascot.png";
 import { Starfield } from "./Starfield";
 import { Ufo } from "./Ufo";
 
-const CA_PLACEHOLDER = "[INSERT SOLANA CA HERE]";
+const CA_PLACEHOLDER = "Revealed Soon";
 const SOON = "/coming-soon";
 const TELEGRAM_URL = "https://t.me/AlienFuel";
 const X_URL = "https://x.com/aliens_Fuel";
