@@ -1,9 +1,27 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
+import {
+  Wallet,
+  Coins,
+  Repeat,
+  ClipboardCheck,
+  Rocket,
+  Radio,
+  Sparkles,
+  Shirt,
+  Send,
+  ShieldCheck,
+  LineChart,
+  Lock,
+  Users,
+  Megaphone,
+} from "lucide-react";
 import alienMascot from "@/assets/alien-mascot.png";
 import { Starfield } from "./Starfield";
 import { Ufo } from "./Ufo";
 
 const CA_PLACEHOLDER = "[INSERT SOLANA CA HERE]";
+const SOON = "/coming-soon";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +41,7 @@ function NavBar() {
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all ${
         scrolled
-          ? "backdrop-blur-xl bg-background/70 border-b border-primary/15"
+          ? "backdrop-blur-xl bg-background/80 border-b border-primary/15"
           : "bg-transparent"
       }`}
     >
@@ -50,12 +68,12 @@ function NavBar() {
           ))}
         </ul>
         <div className="flex items-center gap-3">
-          <a href="#" aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link to={SOON} aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.83l-4.74-6.2L4.8 22H2l7.04-8.04L2 2h6.91l4.29 5.7L18.244 2Zm-1.2 18.2h1.86L7.04 3.7H5.06L17.045 20.2Z"/></svg>
-          </a>
-          <a href="#" aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
+          </Link>
+          <Link to={SOON} aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.6 10.8c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11-7c.5-.3 1-.1.6.2l-9 8.1.3.5 4.7 3.5c.8.5 1.4.2 1.6-.7l2.9-13.5c.3-1.3-.4-1.9-1.8-1.4Z"/></svg>
-          </a>
+          </Link>
           <a
             href="#buy"
             className="hidden sm:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-bold font-display tracking-wider text-primary-foreground btn-glow"
@@ -74,7 +92,7 @@ function Hero() {
       id="top"
       className="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden"
     >
-      <div className="absolute inset-0 grid-bg opacity-30" />
+      <div className="absolute inset-0 grid-bg opacity-25" />
       <Starfield count={120} />
       <div className="absolute top-32 left-6 stamp text-xs sm:text-sm hidden sm:block">
         TOP SECRET
@@ -94,22 +112,23 @@ function Hero() {
             THEY WALK<br />AMONG US
           </h1>
           <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
-            The official 2026 declassified Solana meme coin. Abduct the market with the
-            cutest alien in crypto.
+            The official 2026 declassified Solana meme coin. Built for the
+            community, secured by the chain, fueled by belief.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
             <a
               href="#buy"
               className="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3.5 font-display font-bold tracking-wider text-primary-foreground btn-glow"
             >
-              BUY NOW →
+              BUY NOW
             </a>
-            <a
-              href="#"
-              className="inline-flex items-center justify-center rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
+            <Link
+              to={SOON}
+              className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
             >
+              <LineChart className="h-4 w-4" />
               VIEW LIVE CHART
-            </a>
+            </Link>
           </div>
           <div className="mt-8 card-cyber rounded-lg p-3 sm:p-4 text-left">
             <div className="text-[10px] font-display tracking-widest text-primary/80 mb-1">
@@ -171,25 +190,22 @@ function Story() {
         <Ufo className="absolute -top-8 -right-4 w-20 animate-float" />
         <div className="space-y-5 text-base sm:text-lg text-foreground/90 leading-relaxed">
           <p>
-            For decades the government hid the truth. In 2026 the White House launched
-            Aliens.gov confirming what we always knew:{" "}
+            For decades the government hid the truth. In 2026 the White House
+            launched Aliens.gov, confirming what we always knew:{" "}
             <span className="text-primary font-semibold text-glow-soft">
               They Walk Among Us.
             </span>
           </p>
           <p>
-            While others focus on borders,{" "}
-            <span className="text-primary font-semibold">$ALIENS</span> focuses on the
-            real invasion — the one pumping on Solana.
+            While the world debates borders,{" "}
+            <span className="text-primary font-semibold">$ALIENS</span> focuses
+            on the real invasion — the one happening on Solana.
           </p>
           <p>
-            Born from the declassification files, $ALIENS is a community-driven token
-            uniting truthers, degens, and believers. Our mission? Probe the dips, beam
-            up the gains, and make everyone rich with the friendliest grey alien in the
-            galaxy.
-          </p>
-          <p className="text-primary/90 italic">
-            No fake utilities. Just pure vibes, transparency, and cosmic gains.
+            Born from the declassification files, $ALIENS is a community-driven
+            token uniting believers, builders, and degens. No fake utility. No
+            empty promises. Just transparent tokenomics, locked liquidity, and a
+            cult ready to broadcast.
           </p>
         </div>
       </div>
@@ -199,9 +215,9 @@ function Story() {
 
 function Tokenomics() {
   const items = [
-    { label: "Liquidity (locked)", value: 80, note: "Locked at launch" },
-    { label: "Marketing / Raids", value: 10, note: "Fuel the invasion" },
-    { label: "Team (vested)", value: 10, note: "Long-term aligned" },
+    { label: "Liquidity (Locked)", value: 80, note: "Locked at launch, verifiable on-chain", Icon: Lock },
+    { label: "Marketing & Growth", value: 10, note: "Listings, partnerships, community ops", Icon: Megaphone },
+    { label: "Team (Vested)", value: 10, note: "Long-term aligned, multi-month vest", Icon: Users },
   ];
   return (
     <Section id="tokenomics" eyebrow="ARCHIVE 02" title="TOKENOMICS">
@@ -223,8 +239,9 @@ function Tokenomics() {
         <div className="space-y-6">
           {items.map((it) => (
             <div key={it.label}>
-              <div className="flex justify-between text-sm sm:text-base mb-2">
-                <span className="font-display tracking-wider text-foreground">
+              <div className="flex justify-between items-center text-sm sm:text-base mb-2">
+                <span className="flex items-center gap-2 font-display tracking-wider text-foreground">
+                  <it.Icon className="h-4 w-4 text-primary" />
                   {it.label}
                 </span>
                 <span className="font-display text-primary text-glow-soft">
@@ -251,10 +268,10 @@ function Tokenomics() {
 
 function Roadmap() {
   const phases = [
-    { p: "PHASE 1", t: "Launch & Community Build", d: "Q2 2026 · Fair launch, lock LP, ignite the believers.", icon: "🛸" },
-    { p: "PHASE 2", t: "Massive Raids & Listings", d: "CEX talks, coordinated raids, viral propagation.", icon: "📡" },
-    { p: "PHASE 3", t: "Alien NFT Collection", d: "Cute PFPs for every truther in the galaxy.", icon: "👽" },
-    { p: "PHASE 4", t: "Merch & Beyond", d: "Tin foil hats, hoodies, IRL invasions.", icon: "🎩" },
+    { p: "PHASE 1", t: "Launch & Community", d: "Fair launch, LP locked, foundational believers onboarded.", Icon: Rocket },
+    { p: "PHASE 2", t: "Listings & Visibility", d: "DEX trending, CMC/CoinGecko listings, CEX outreach.", Icon: Radio },
+    { p: "PHASE 3", t: "Alien Identity", d: "PFP collection and on-chain holder perks for the cult.", Icon: Sparkles },
+    { p: "PHASE 4", t: "IRL Invasion", d: "Merch drops, IRL events, and cross-chain expansion.", Icon: Shirt },
   ];
   return (
     <Section id="roadmap" eyebrow="ARCHIVE 03" title="MISSION ROADMAP">
@@ -264,9 +281,10 @@ function Roadmap() {
             key={ph.p}
             className="card-cyber rounded-xl p-6 relative overflow-hidden group transition"
           >
-            <div className="absolute -top-6 -right-6 text-7xl opacity-10 group-hover:opacity-20 transition">
-              {ph.icon}
-            </div>
+            <ph.Icon
+              className="absolute -top-2 -right-2 h-24 w-24 text-primary/10 group-hover:text-primary/20 transition"
+              strokeWidth={1}
+            />
             <div className="text-xs font-display tracking-widest text-primary/80">
               {ph.p} · 0{i + 1}
             </div>
@@ -283,18 +301,18 @@ function Roadmap() {
 
 function HowToBuy() {
   const steps = [
-    { n: 1, t: "Get a Solana wallet", d: "Install Phantom or Solflare on your phone or browser.", icon: "👛" },
-    { n: 2, t: "Buy SOL", d: "Fund your wallet with SOL from any exchange.", icon: "◎" },
-    { n: 3, t: "Swap on Raydium or Jupiter", d: "Head to a DEX and connect your wallet.", icon: "🔄" },
-    { n: 4, t: "Paste the Contract Address", d: CA_PLACEHOLDER, icon: "📋" },
+    { n: 1, t: "Get a Solana wallet", d: "Install Phantom or Solflare on your phone or browser.", Icon: Wallet },
+    { n: 2, t: "Fund with SOL", d: "Buy SOL on any major exchange and send it to your wallet.", Icon: Coins },
+    { n: 3, t: "Swap on a DEX", d: "Open Raydium or Jupiter and connect your wallet.", Icon: Repeat },
+    { n: 4, t: "Paste the contract", d: CA_PLACEHOLDER, Icon: ClipboardCheck },
   ];
   return (
     <Section id="buy" eyebrow="ARCHIVE 04" title="SECURE YOUR BAGS">
       <div className="grid sm:grid-cols-2 gap-5">
         {steps.map((s) => (
           <div key={s.n} className="card-cyber rounded-xl p-6 flex gap-4">
-            <div className="shrink-0 h-12 w-12 rounded-lg bg-primary/15 border border-primary/40 flex items-center justify-center text-2xl">
-              {s.icon}
+            <div className="shrink-0 h-12 w-12 rounded-lg bg-primary/15 border border-primary/40 flex items-center justify-center">
+              <s.Icon className="h-5 w-5 text-primary" />
             </div>
             <div>
               <div className="text-xs font-display tracking-widest text-primary/80">
@@ -307,38 +325,40 @@ function HowToBuy() {
         ))}
       </div>
       <div className="mt-10 flex flex-col sm:flex-row gap-3 justify-center">
-        <a
-          href="#"
+        <Link
+          to={SOON}
           className="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3.5 font-display font-bold tracking-wider text-primary-foreground btn-glow"
         >
           BUY ON RAYDIUM
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          to={SOON}
           className="inline-flex items-center justify-center rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
         >
           BUY ON JUPITER
-        </a>
+        </Link>
       </div>
     </Section>
   );
 }
 
 function Community() {
+  const pillars = [
+    { Icon: ShieldCheck, t: "Liquidity Locked", d: "LP is locked and verifiable on-chain from day one." },
+    { Icon: Users, t: "Community Owned", d: "Fair launch, no presale, no insider allocation." },
+    { Icon: LineChart, t: "Transparent", d: "All wallets visible. Real tokenomics, no surprises." },
+    { Icon: Sparkles, t: "Built to Last", d: "Branding, merch, and IRL activations on the way." },
+  ];
   return (
-    <Section id="community" eyebrow="ARCHIVE 05" title="ENCOUNTERS / GALLERY">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div
-            key={i}
-            className="aspect-square card-cyber rounded-xl flex items-center justify-center text-4xl relative overflow-hidden group"
-          >
-            <span className="opacity-60 group-hover:scale-110 transition">
-              {["👽", "🛸", "🌌", "👁️", "📡", "🪐", "🤝", "💎"][i]}
-            </span>
-            <div className="absolute bottom-2 left-2 right-2 text-[10px] font-display tracking-widest text-primary/60">
-              MEME #{(i + 1).toString().padStart(3, "0")}
-            </div>
+    <Section id="community" eyebrow="ARCHIVE 05" title="WHY $ALIENS">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-12">
+        {pillars.map((p) => (
+          <div key={p.t} className="card-cyber rounded-xl p-6">
+            <p.Icon className="h-7 w-7 text-primary mb-4" strokeWidth={1.5} />
+            <h3 className="font-display text-base text-foreground text-glow-soft">
+              {p.t}
+            </h3>
+            <p className="mt-2 text-sm text-muted-foreground">{p.d}</p>
           </div>
         ))}
       </div>
@@ -350,18 +370,19 @@ function Community() {
           Truthers, degens, and believers unite. The mothership is boarding now.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <a
-            href="#"
+          <Link
+            to={SOON}
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 font-display font-bold tracking-wider text-primary-foreground btn-glow"
           >
+            <Send className="h-4 w-4" />
             JOIN TELEGRAM
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to={SOON}
             className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
           >
             FOLLOW ON X
-          </a>
+          </Link>
         </div>
       </div>
     </Section>
@@ -377,12 +398,12 @@ function Footer() {
           <span className="font-display tracking-widest text-primary text-sm">$ALIENS</span>
         </div>
         <p className="text-xs text-muted-foreground text-center">
-          © 2026 $ALIENS • Not financial advice • Pump responsibly • They walk among us 👽
+          © 2026 $ALIENS · Not financial advice · Pump responsibly · They walk among us
         </p>
-        <div className="flex gap-4 text-muted-foreground">
-          <a href="#" className="hover:text-primary transition" aria-label="X">X</a>
-          <a href="#" className="hover:text-primary transition" aria-label="Telegram">TG</a>
-          <a href="#" className="hover:text-primary transition" aria-label="Dexscreener">DEX</a>
+        <div className="flex gap-4 text-muted-foreground text-xs font-display tracking-widest">
+          <Link to={SOON} className="hover:text-primary transition" aria-label="X">X</Link>
+          <Link to={SOON} className="hover:text-primary transition" aria-label="Telegram">TG</Link>
+          <Link to={SOON} className="hover:text-primary transition" aria-label="Dexscreener">DEX</Link>
         </div>
       </div>
     </footer>
