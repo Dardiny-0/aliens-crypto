@@ -15,6 +15,8 @@ import {
   Lock,
   Users,
   Megaphone,
+  Fuel,
+  Zap,
 } from "lucide-react";
 import alienMascot from "@/assets/alien-mascot.png";
 import { Starfield } from "./Starfield";
@@ -22,6 +24,8 @@ import { Ufo } from "./Ufo";
 
 const CA_PLACEHOLDER = "[INSERT SOLANA CA HERE]";
 const SOON = "/coming-soon";
+const TELEGRAM_URL = "https://t.me/AlienFuel";
+const X_URL = "https://x.com/aliens_Fuel";
 
 function NavBar() {
   const [scrolled, setScrolled] = useState(false);
@@ -68,12 +72,12 @@ function NavBar() {
           ))}
         </ul>
         <div className="flex items-center gap-3">
-          <Link to={SOON} aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
+          <a href={X_URL} target="_blank" rel="noopener noreferrer" aria-label="X" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2H21l-6.52 7.45L22 22h-6.83l-4.74-6.2L4.8 22H2l7.04-8.04L2 2h6.91l4.29 5.7L18.244 2Zm-1.2 18.2h1.86L7.04 3.7H5.06L17.045 20.2Z"/></svg>
-          </Link>
-          <Link to={SOON} aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
+          </a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-muted-foreground hover:text-primary transition-colors">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 3.5 2.6 10.8c-1.3.5-1.3 1.2-.2 1.5l4.8 1.5 11-7c.5-.3 1-.1.6.2l-9 8.1.3.5 4.7 3.5c.8.5 1.4.2 1.6-.7l2.9-13.5c.3-1.3-.4-1.9-1.8-1.4Z"/></svg>
-          </Link>
+          </a>
           <a
             href="#buy"
             className="hidden sm:inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-bold font-display tracking-wider text-primary-foreground btn-glow"
@@ -104,9 +108,9 @@ function Hero() {
 
       <div className="relative mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-10 items-center">
         <div className="text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-3 py-1 text-xs font-display tracking-widest text-primary mb-6">
-            <span className="h-2 w-2 rounded-full bg-primary animate-pulse-glow" />
-            FILE #2026-ALIENS-GOV
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/5 px-3 py-1.5 text-xs font-display tracking-widest text-primary mb-6 shadow-[0_0_20px_oklch(0.85_0.22_155/0.25)]">
+            <Fuel className="h-3.5 w-3.5 animate-pulse-glow" />
+            FUELING THE ALIEN · LIVE
           </div>
           <h1 className="font-display font-black text-4xl sm:text-6xl lg:text-7xl leading-[1.05] text-glow text-primary">
             THEY WALK<br />AMONG US
@@ -140,15 +144,41 @@ function Hero() {
           </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
+        <div className="relative flex justify-center lg:justify-end pb-16">
           <div className="absolute inset-0 m-auto h-72 w-72 sm:h-96 sm:w-96 rounded-full bg-primary/20 blur-3xl animate-pulse-glow" />
+
+          {/* Token stream — fueling the alien */}
+          <div className="pointer-events-none absolute left-2 lg:left-4 top-1/2 -translate-y-1/2 hidden sm:flex flex-col gap-2 z-10">
+            {[0, 1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="h-3 w-3 rounded-full bg-primary shadow-[0_0_12px_oklch(0.85_0.22_155/0.9)] animate-fuel-stream"
+                style={{ animationDelay: `${i * 0.4}s` }}
+              />
+            ))}
+          </div>
+
           <img
             src={alienMascot}
-            alt="Cute grey alien holding a Solana orb"
+            alt="Cute grey alien being fueled with $ALIENS tokens"
             className="relative w-64 sm:w-80 lg:w-[26rem] drop-shadow-[0_0_40px_rgba(0,255,157,0.45)] animate-float"
             width={520}
             height={520}
           />
+
+          {/* Fuel gauge */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-56 sm:w-72 card-cyber rounded-lg px-4 py-3">
+            <div className="flex items-center justify-between text-[10px] font-display tracking-widest mb-1.5">
+              <span className="flex items-center gap-1.5 text-primary"><Zap className="h-3 w-3" /> FUEL LEVEL</span>
+              <span className="text-primary text-glow-soft">98%</span>
+            </div>
+            <div className="h-2 rounded-full bg-secondary overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-primary via-accent to-primary"
+                style={{ width: "98%", boxShadow: "0 0 14px oklch(0.85 0.22 155 / 0.7)" }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -370,19 +400,23 @@ function Community() {
           Truthers, degens, and believers unite. The mothership is boarding now.
         </p>
         <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            to={SOON}
+          <a
+            href={TELEGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-7 py-3.5 font-display font-bold tracking-wider text-primary-foreground btn-glow"
           >
             <Send className="h-4 w-4" />
             JOIN TELEGRAM
-          </Link>
-          <Link
-            to={SOON}
+          </a>
+          <a
+            href={X_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 rounded-md border border-primary/40 px-7 py-3.5 font-display font-bold tracking-wider text-primary hover:bg-primary/10 transition"
           >
             FOLLOW ON X
-          </Link>
+          </a>
         </div>
       </div>
     </Section>
@@ -401,8 +435,8 @@ function Footer() {
           © 2026 $ALIENS · Not financial advice · Pump responsibly · They walk among us
         </p>
         <div className="flex gap-4 text-muted-foreground text-xs font-display tracking-widest">
-          <Link to={SOON} className="hover:text-primary transition" aria-label="X">X</Link>
-          <Link to={SOON} className="hover:text-primary transition" aria-label="Telegram">TG</Link>
+          <a href={X_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition" aria-label="X">X</a>
+          <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="hover:text-primary transition" aria-label="Telegram">TG</a>
           <Link to={SOON} className="hover:text-primary transition" aria-label="Dexscreener">DEX</Link>
         </div>
       </div>
